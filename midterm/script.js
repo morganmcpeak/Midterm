@@ -14,13 +14,13 @@ $(document).ready(function(){
   });
 
   $(".back").on("click", function() {
+      clicks++;
 	  cardOne = this.innerHTML;
-	  clicks++;
-	  	
+	  console.log(cardOne); 	
 		$(".back").on("click", function() {
 			if (clicks === 1) {
 			cardTwo = this.innerHTML;
-			console.log(cardOne); }
+			console.log(cardTwo); }
 		});
   });
 
