@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	
+	var clicks = 0;
+	var cardOne;
+	var cardTwo;
 
   $("#start").on("click", function() {
     var parent = $(".cardHolder");
@@ -9,7 +13,16 @@ $(document).ready(function(){
 	$("#startScreen").css("display", "none");
   });
 
-  
+  $(".back").on("click", function() {
+	  cardOne = this.innerHTML;
+	  clicks++;
+	  	
+		$(".back").on("click", function() {
+			if (clicks === 1) {
+			cardTwo = this.innerHTML;
+			console.log(cardOne); }
+		});
+  });
 
 
 
