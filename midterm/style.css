@@ -24,7 +24,7 @@ background-color: lightpink;
 }
 #reset {
   width: 90%;
-  align-text: center;
+  text-align: center;
   padding: 10px;
   border-radius: 10%;
   border: none;
