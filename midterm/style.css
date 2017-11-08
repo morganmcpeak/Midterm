@@ -1,1 +1,41 @@
-/*css file*/
+body {
+background-color: lightpink;
+}
+#title {
+  display: flex;
+  background-color: pink;
+  justify-content: center;
+  flex-direction: column;
+}
+.cardHolder {
+  display: inline-grid;
+  grid-template-rows: 30% 30% 30%;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px; 
+  justify-content: space-around;
+  padding: 10px;
+}
+.cardHolder div {
+  width: 100px;
+  height: 175px;
+  background-color: lightgreen;
+  border-radius: 10%;
+}
+#reset {
+  width: 90%;
+  align-text: center;
+  padding: 10px;
+  border-radius: 10%;
+  border: none;
+  background-color: black;
+  color: white;
+}
+#startScreen {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  
+  
+}
