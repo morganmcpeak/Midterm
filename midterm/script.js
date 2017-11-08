@@ -20,8 +20,13 @@ $(document).ready(function(){
 		$(".back").on("click", function() {
 			if (clicks === 1) {
 			cardTwo = this.innerHTML;
-			console.log(cardTwo); }
-		});
+            console.log(cardTwo);
+            clicks++
+        }
+        if (clicks === 2) {
+        $(".back").off("click");
+        }
+    });
   });
 
 
