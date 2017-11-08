@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	
-	var clicks = 0;
-	var cardOne;
-	var cardTwo;
+  
+  var clicks = 0;
+  var cardOne;
+  var cardTwo;
 
   $("#start").on("click", function() {
     var parent = $(".cardHolder");
@@ -10,21 +10,24 @@ $(document).ready(function(){
     while (card.length) {
       parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
     };
-	$("#startScreen").css("display", "none");
+  $("#startScreen").css("display", "none");
   });
 
   $(".back").on("click", function() {
-      clicks++;
-	  cardOne = this.innerHTML;
-	  console.log(cardOne); 	
-		$(".back").on("click", function() {
-			if (clicks === 1) {
-			cardTwo = this.innerHTML;
-            console.log(cardTwo);
-            clicks++
+  if (clicks === 2) {
+        $(".back").off("click");
+        clicks = 0;
+        return;
         }
-        
-    });
+      if (clicks === 1) {
+            cardTwo = this.innerHTML;
+            console.log(cardTwo); 
+            clicks++; 
+            return; 
+        } 
+    clicks++;
+    cardOne = this.innerHTML;
+    console.log("hey" + cardOne);   
   });
 
 
