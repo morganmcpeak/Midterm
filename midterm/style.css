@@ -36,6 +36,16 @@ background-color: lightpink;
   z-index: 1;
   position: absolute;
   width: 100%;
-  
-  
+}
+@media screen and (min-width: 480px) {
+  .cardHolder {
+  grid-template-rows: 30% 30% 30%;
+  grid-template-columns: 20% 20% 20% 20%;
+  }
+  h1 {
+  font-size: 48px;
+  }
+  p {
+    font-size: 25px;
+}
 }
