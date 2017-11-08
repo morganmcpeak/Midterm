@@ -33,13 +33,21 @@ background-color: lightpink;
 .cardHolder div {
   width: 75px;
   height: 100px;
-  background-color: lightgreen;
   border-radius: 10%;
   line-height: 100px;
   text-align: center;
   font-size: 20px;
   font-style: bold;
 }
+
+.back {
+   background-color: lightgreen;
+}
+
+.front {
+  background-color: white;
+}
+
 #reset {
   display: inline-block;
   width: 300px;
