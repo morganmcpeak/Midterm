@@ -54,7 +54,17 @@ $(document).ready(function(){
       }    
   });
   
-  myAudio = new Audio('thexfiles.mp3'); 
+	$("#reset").on("click", function() {
+		$(".cardHolder div").css("visibility", "visible");
+		$(".front").addClass("back").removeClass("front");
+		var parent = $(".cardHolder");
+		var card = parent.children();
+		while (card.length) {
+		parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
+		};
+	});
+  
+  	myAudio = new Audio('thexfiles.mp3'); 
 	myAudio.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
