@@ -1,5 +1,7 @@
 body {
     background-image: url("images/space-background.jpg");
+    background-size: cover;
+    background-position: center;
     }
 
     #title {
