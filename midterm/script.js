@@ -3,6 +3,7 @@ $(document).ready(function(){
   var clicks = 0;
   var cardOne;
   var cardTwo;
+  var matches = 0;
 
   $("#start").on("click", function() {
     var parent = $(".cardHolder");
@@ -32,9 +33,12 @@ $(document).ready(function(){
            }, 1000)
         setTimeout(function(){
           if(cardOne.innerHTML === cardTwo.innerHTML) {
+	  matches++;
+          var scoreBoard = document.getElementById("scoreBoard");
+          scoreBoard.innerText="Score Board: " + matches;
           $(".front").css("visibility","hidden");
-        clicks = 0;
-        return;
+          clicks = 0;
+          return;
         } 
       }, 1000)
         
