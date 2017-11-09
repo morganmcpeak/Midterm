@@ -18,16 +18,21 @@ $(document).ready(function(){
             $(this).addClass("front");
             $(this).removeClass("back");
             clicks++; 
-        if (cardOne !== cardTwo){
+        setTimeout(function(){
+          if (cardOne !== cardTwo){
            $(".front").addClass("back").removeClass("front");
             clicks = 0;
             return;
           }
-        if(cardOne.innerHTML === cardTwo.innerHTML) {
-        $(".front").css("visibility","hidden");
+           }, 1000)
+        setTimeout(function(){
+          if(cardOne.innerHTML === cardTwo.innerHTML) {
+          $(".front").css("visibility","hidden");
         clicks = 0;
         return;
         } 
+      }, 1000)
+        
         } 
       if (clicks === 0) {
         clicks++;
