@@ -15,12 +15,17 @@ $(document).ready(function(){
    $(".back").on("click", function() {
       if (clicks === 1) {
             cardTwo = this.innerHTML;
-            $(this).addClass("front");
-            $(this).removeClass("back");
+			$(this).addClass("front");
+			$(this).hide();
+			$(this).removeClass("back");
+			$(".front").slideDown(500);
             clicks++; 
         setTimeout(function(){
           if (cardOne !== cardTwo){
-           $(".front").addClass("back").removeClass("front");
+		   $(".front").addClass("back");
+		   $(".front").hide();
+		   $(".front").removeClass("front");
+		   $(".back").slideDown(300);
             clicks = 0;
             return;
           }
@@ -36,15 +41,14 @@ $(document).ready(function(){
         } 
       if (clicks === 0) {
         clicks++;
-        cardOne = this.innerHTML;
-        $(this).addClass("front");
-        $(this).removeClass("back");
+        cardOne = this.innerHTML
+		
+		$(this).addClass("front");
+		$(this).hide();
+		$(this).removeClass("back");
+		$(".front").slideDown(500);
+        console.log(cardOne); 
       }    
   });
-
-
-
-
-
 
 });
