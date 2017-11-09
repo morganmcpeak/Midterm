@@ -61,6 +61,9 @@ $(document).ready(function(){
 		var card = parent.children();
 		while (card.length) {
 		parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
+    		matches = 0;
+    		var scoreBoard = document.getElementById("scoreBoard");
+    		scoreBoard.innerText="Score Board: " + matches;
 		};
 	});
   
