@@ -64,7 +64,7 @@ $(document).ready(function(){
 		};
 	});
   
-  	myAudio = new Audio('thexfiles.mp3'); 
+  	myAudio = new Audio('audio/thexfiles.mp3'); 
 	myAudio.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
