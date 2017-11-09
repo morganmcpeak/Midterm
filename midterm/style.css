@@ -61,9 +61,14 @@ body {
     
     }
     
-    p {
-        display: block;
+      .front p {
+      display: inline-block;
     }
+    
+    .back p {
+        display: none;
+    }
+    
     
     #reset {
       display: inline-block;
@@ -124,7 +129,7 @@ body {
       h1 {
       font-size: 48px;
       }
-      p {
+     .front p {
         font-size: 25px;
     }
     }
