@@ -15,25 +15,25 @@ $(document).ready(function(){
   });
    $(".back").on("click", function() {
       if (clicks === 1) {
-            cardTwo = this.innerHTML;
-			$(this).addClass("front");
-			$(this).hide();
-			$(this).removeClass("back");
-			$(".front").slideDown(500);
-            clicks++; 
+          cardTwo = this;
+          $(this).addClass("front");
+          $(this).hide();
+          $(this).removeClass("back");
+          $(this).slideDown(500);
+          clicks++; 
         setTimeout(function(){
-          if (cardOne !== cardTwo){
-		   $(".front").addClass("back");
-		   $(".front").hide();
-		   $(".front").removeClass("front");
-		   $(".back").slideDown(300);
+          if (cardOne.innerHTML !== cardTwo.innerHTML)  {
+            $(".front").addClass("back");
+            $(".front").hide();
+            $(".front").removeClass("front");
+            $(".back").slideDown(300);
             clicks = 0;
             return;
           }
            }, 1000)
         setTimeout(function(){
           if(cardOne.innerHTML === cardTwo.innerHTML) {
-	  matches++;
+          matches++;
           var scoreBoard = document.getElementById("scoreBoard");
           scoreBoard.innerText="Score Board: " + matches;
           $(".front").css("visibility","hidden");
@@ -45,13 +45,12 @@ $(document).ready(function(){
         } 
       if (clicks === 0) {
         clicks++;
-        cardOne = this.innerHTML
-		
-		$(this).addClass("front");
-		$(this).hide();
-		$(this).removeClass("back");
-		$(".front").slideDown(500);
-        console.log(cardOne); 
+        cardOne = this
+        $(this).addClass("front");
+        $(this).hide();
+        $(this).removeClass("back");
+        $(".front").slideDown(500);
+       
       }    
   });
 
