@@ -12,48 +12,33 @@ $(document).ready(function(){
     };
   $("#startScreen").css("display", "none");
   });
-
   $(".back").on("click", function() {
-  if (clicks === 2) {
-        $(".back").off("click");
-        clicks = 0;
-        return;
-        }
       if (clicks === 1) {
             cardTwo = this.innerHTML;
             console.log(cardTwo); 
+            $(this).addClass("front");
             clicks++; 
-            return; 
+        if (cardOne !== cardTwo){
+            clicks = 0;
+            console.log("yo no good");
+            return;
+          }
+        if(cardOne.innerHTML === cardTwo.innerHTML) {
+        //clicks = 0;
+        console.log("hello");
+        return;
         } 
-    clicks++;
-    cardOne = this.innerHTML;
-    console.log("hey" + cardOne);   
-  });
-//  check this out... we do not need the .off to keep going because our clicks are getting reset everytime
-//   $(".back").on("click", function() {
-//       if (clicks === 1) {
-//             cardTwo = this.innerHTML;
-//             console.log(cardTwo); 
-//             clicks++; 
-//         if (cardOne !== cardTwo){
-//             clicks = 0;
-//             console.log("yo no good");
-//             return;
-//           }
-//         if(cardOne.innerHTML === cardTwo.innerHTML) {
-//         $(".back").off("click");
-//         //clicks = 0;
-//         console.log("hello");
-//         return;
-//         } 
-//         } 
-//       if (clicks === 0) {
-//         clicks++;
-//         cardOne = this.innerHTML;
-//         console.log(cardOne); 
-//       }
+        } 
+      if (clicks === 0) {
+        clicks++;
+        cardOne = this.innerHTML;
+        $(this).addClass("front");
+        console.log(cardOne); 
+      }
        
-//   });
+  });
+
+
 
 
 
