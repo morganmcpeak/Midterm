@@ -1,9 +1,8 @@
 body {
-    background-color: lightpink;
+    background-image: url("images/space-background.gif");
     }
     #title {
       display: flex;
-      background-color: pink;
       justify-content: center;
       flex-direction: column;
       text-align: center;
@@ -13,11 +12,15 @@ body {
     }
     #title p {
      margin: 0px;
-     font-family: "Ubuntu Condensed"
+     font-family: "Ubuntu Condensed";
+     color: white;
     }
     #title h1 {
      margin-top: 0px;
      font-family: "Lobster";
+     color: white;
+     letter-spacing: 1px;
+     padding-top: 20px;
     }
     .container {
       display: flex;
@@ -27,15 +30,15 @@ body {
       display: inline-grid;
       grid-template-columns: 30% 30% 30%;
       grid-template-rows: 20% 20% 20% 20%;
-      grid-column-gap: 30px;
-      grid-row-gap: 20px; 
+      grid-column-gap: 20px;
+      grid-row-gap: 10px; 
       justify-content: space-around;
       padding: 20px;
       z-index: 0;
     }
     .cardHolder div {
-      width: 75px;
-      height: 100px;
+      width: 80px;
+      height: 105px;
       border-radius: 10%;
       text-align: center;
       font-size: 20px;
@@ -83,6 +86,7 @@ body {
     #startScreen h1 {
         font-family: "Lobster";
         line-height: 0;
+        font-size: 25px;
     }
     #startScreen p {
         font-family: "Ubuntu Condensed";
@@ -107,8 +111,8 @@ body {
       grid-row-gap: 50px; 
       }
       .cardHolder div {
-        width: 200px;
-        height: 300px;
+        width: 125px;
+        height: 200px;
       }
       h1 {
       font-size: 48px;
