@@ -11,7 +11,7 @@ $(document).ready(function(){
     while (card.length) {
       parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
     };
-  $("#startScreen").css("display", "none");
+  $("#startScreen").slideUp(1000);
   });
    $(".back").on("click", function() {
       if (clicks === 1) {
