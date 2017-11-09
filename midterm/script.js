@@ -12,20 +12,20 @@ $(document).ready(function(){
     };
   $("#startScreen").css("display", "none");
   });
-  $(".back").on("click", function() {
+   $(".back").on("click", function() {
       if (clicks === 1) {
             cardTwo = this.innerHTML;
-            console.log(cardTwo); 
             $(this).addClass("front");
+            $(this).removeClass("back");
             clicks++; 
         if (cardOne !== cardTwo){
+           $(".front").addClass("back").removeClass("front");
             clicks = 0;
-            console.log("yo no good");
             return;
           }
         if(cardOne.innerHTML === cardTwo.innerHTML) {
-        //clicks = 0;
-        console.log("hello");
+        $(".front").css("visibility","hidden");
+        clicks = 0;
         return;
         } 
         } 
@@ -33,10 +33,10 @@ $(document).ready(function(){
         clicks++;
         cardOne = this.innerHTML;
         $(this).addClass("front");
-        console.log(cardOne); 
-      }
-       
+        $(this).removeClass("back");
+      }    
   });
+
 
 
 
