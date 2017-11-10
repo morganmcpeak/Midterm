@@ -88,6 +88,7 @@ $(document).ready(function(){
 $(".playAgain").on("click", function() {
     	var parent = $(".cardHolder");
    	var card = parent.children();
+	$("#reset").css("display","inline-block");
     	matches = 0;
     	totalClicks = 10; 
     	var scoreBoard = document.getElementById("scoreBoard");
