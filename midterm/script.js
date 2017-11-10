@@ -73,9 +73,9 @@ $(document).ready(function(){
 	 $("#playAgain").on("click", function() {
     		var parent = $(".cardHolder");
    		var card = parent.children();
+		matches = 0; 
     		var scoreBoard = document.getElementById("scoreBoard");
    		scoreBoard.innerText="Score Board: " + matches;
-    		matches = 0;
     		cardOne;
     		cardTwo;
    		while (card.length) {
