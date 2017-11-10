@@ -70,7 +70,15 @@ body {
     .front {
       background-color: white;
     }
-    
+        .back img {
+        display: none;
+
+    }
+   .front img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
     #reset {
       display: inline-block;
       width: 300px;
