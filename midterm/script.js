@@ -15,6 +15,10 @@ $(document).ready(function(){
   $("#startScreen").slideUp(1000);
   });
    $(".back").on("click", function() {
+	if (clicks === 1 && $(this).hasClass("front")) {
+          alert("You can't pick the same card!");
+          return;
+      	 }
       if (clicks === 1) {
           cardTwo = this;
           $(this).addClass("front");
@@ -67,8 +71,7 @@ $(document).ready(function(){
        
       }    
   });
-  
-	$("#reset").on("click", function() {
+  $("#reset").on("click", function() {
 		$(".cardHolder div").css("visibility", "visible");
 		$(".front").addClass("back").removeClass("front");
 		var parent = $(".cardHolder");
@@ -82,30 +85,30 @@ $(document).ready(function(){
 		tries.innerText="Turns left: " + totalClicks;
 		};
 	});
-	 $(".playAgain").on("click", function() {
+$(".playAgain").on("click", function() {
     	var parent = $(".cardHolder");
-   		var card = parent.children();
-    matches = 0;
-    totalClicks = 10; 
-    		var scoreBoard = document.getElementById("scoreBoard");
-   		scoreBoard.innerText="Score Board: " + matches;
-    		cardOne;
-    		cardTwo;
-   		while (card.length) {
-    		parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
-    		};
+   	var card = parent.children();
+    	matches = 0;
+    	totalClicks = 10; 
+    	var scoreBoard = document.getElementById("scoreBoard");
+   	scoreBoard.innerText="Score Board: " + matches;
+    	cardOne;
+    	cardTwo;
+   	while (card.length) {
+    	parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
+    	};
       $("#winScreen").slideUp(1000);
       $("#loseScreen").slideUp(1000);
-  		$(".cardHolder div").css("visibility", "visible");
-  		$(".front").addClass("back").removeClass("front");
+      $(".cardHolder div").css("visibility", "visible");
+      $(".front").addClass("back").removeClass("front");
  	 });
   
-  	myAudio = new Audio('audio/thexfiles.mp3'); 
-	myAudio.addEventListener('ended', function() {
+  myAudio = new Audio('audio/thexfiles.mp3'); 
+  myAudio.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
-	}, false);
-	myAudio.play();
+   }, false);
+  myAudio.play();
 
 });
 
