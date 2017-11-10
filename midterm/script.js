@@ -19,14 +19,14 @@ $(document).ready(function(){
           $(this).addClass("front");
           $(this).hide();
           $(this).removeClass("back");
-          $(this).slideDown(3000);
+          $(this).slideDown(500);
           clicks++; 
         setTimeout(function(){
           if (cardOne.innerHTML !== cardTwo.innerHTML)  {
             $(".front").addClass("back");
             $(".front").hide();
             $(".front").removeClass("front");
-            $(".back").slideDown(3000);
+            $(".back").slideDown(500);
             clicks = 0;
             return;
           }
