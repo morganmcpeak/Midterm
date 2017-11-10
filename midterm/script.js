@@ -54,8 +54,8 @@ $(document).ready(function(){
       }, 1000)
         } 
       if(totalClicks === 0){
-      	$(".back").css("display","none");
-      	$(".front").css("display","none");
+      	$(".back").css("visibility","none");
+      	$(".front").css("visibility","none");
       	$("#reset").css("display","none");
       	$("#loseScreen").css("display","inline-block");
       	$("#loseScreen").slideDown(1000); 
