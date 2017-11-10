@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var totalClicks = 10;
+  var totalClicks = 14;
   var clicks = 0;
   var cardOne;
   var cardTwo;
@@ -79,7 +79,7 @@ $(document).ready(function(){
 		while (card.length) {
 		parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
     		matches = 0;
-		totalClicks = 10;
+		totalClicks = 14;
     		var scoreBoard = document.getElementById("scoreBoard");
     		scoreBoard.innerText="Score Board: " + matches;
 		tries.innerText="Turns left: " + totalClicks;
@@ -90,7 +90,7 @@ $(".playAgain").on("click", function() {
    	var card = parent.children();
 	$("#reset").css("display","inline-block");
     	matches = 0;
-    	totalClicks = 10; 
+    	totalClicks = 14; 
     	var scoreBoard = document.getElementById("scoreBoard");
    	scoreBoard.innerText="Score Board: " + matches;
     	cardOne;
