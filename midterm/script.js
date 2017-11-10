@@ -38,6 +38,10 @@ $(document).ready(function(){
           scoreBoard.innerText="Score Board: " + matches;
           $(".front").css("visibility","hidden");
           clicks = 0;
+	  if(matches === 6 ) {
+              $("#winScreen").css("display","inline-block");
+              $("#winScreen").slideDown(1000); 
+            	}
           return;
         } 
       }, 1000)
@@ -66,6 +70,21 @@ $(document).ready(function(){
     		scoreBoard.innerText="Score Board: " + matches;
 		};
 	});
+	 $("#playAgain").on("click", function() {
+    		var parent = $(".cardHolder");
+   		var card = parent.children();
+    		var scoreBoard = document.getElementById("scoreBoard");
+   		scoreBoard.innerText="Score Board: " + matches;
+    		matches = 0;
+    		cardOne;
+    		cardTwo;
+   		while (card.length) {
+    		parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
+    		};
+  		$("#winScreen").slideUp(1000);
+  		$(".cardHolder div").css("visibility", "visible");
+  		$(".front").addClass("back").removeClass("front");
+ 	 });
   
   	myAudio = new Audio('audio/thexfiles.mp3'); 
 	myAudio.addEventListener('ended', function() {
