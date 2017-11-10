@@ -1,9 +1,10 @@
 $(document).ready(function(){
-  
+  var totalClicks = 10;
   var clicks = 0;
   var cardOne;
   var cardTwo;
   var matches = 0;
+  var tries = document.getElementById("totalClicks");
 
   $("#start").on("click", function() {
     var parent = $(".cardHolder");
@@ -20,7 +21,9 @@ $(document).ready(function(){
           $(this).hide();
           $(this).removeClass("back");
           $(this).slideDown(500);
-          clicks++; 
+          clicks++;
+          totalClicks--;
+          tries.innerText="Turns left: " + totalClicks;
         setTimeout(function(){
           if (cardOne.innerHTML !== cardTwo.innerHTML)  {
             $(".front").addClass("back");
@@ -45,8 +48,15 @@ $(document).ready(function(){
           return;
         } 
       }, 1000)
-        
         } 
+      if(totalClicks === 0){
+      	$(".back").css("display","none");
+      	$(".front").css("display","none");
+      	$("#reset").css("display","none");
+      	$("#loseScreen").css("display","inline-block");
+      	$("#loseScreen").slideDown(1000); 
+      	return;
+      }
       if (clicks === 0) {
         clicks++;
         cardOne = this
@@ -70,8 +80,8 @@ $(document).ready(function(){
     		scoreBoard.innerText="Score Board: " + matches;
 		};
 	});
-	 $("#playAgain").on("click", function() {
-    		var parent = $(".cardHolder");
+	 $(".playAgain").on("click", function() {
+    	var parent = $(".cardHolder");
    		var card = parent.children();
 		matches = 0; 
     		var scoreBoard = document.getElementById("scoreBoard");
