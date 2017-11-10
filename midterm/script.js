@@ -83,7 +83,8 @@ $(document).ready(function(){
 	 $(".playAgain").on("click", function() {
     	var parent = $(".cardHolder");
    		var card = parent.children();
-		matches = 0; 
+    matches = 0;
+    totalClicks = 10; 
     		var scoreBoard = document.getElementById("scoreBoard");
    		scoreBoard.innerText="Score Board: " + matches;
     		cardOne;
@@ -91,7 +92,8 @@ $(document).ready(function(){
    		while (card.length) {
     		parent.append(card.splice(Math.floor(Math.random() * card.length), 1)[0]);
     		};
-  		$("#winScreen").slideUp(1000);
+      $("#winScreen").slideUp(1000);
+      $("#loseScreen").slideUp(1000);
   		$(".cardHolder div").css("visibility", "visible");
   		$(".front").addClass("back").removeClass("front");
  	 });
@@ -104,3 +106,4 @@ $(document).ready(function(){
 	myAudio.play();
 
 });
+
